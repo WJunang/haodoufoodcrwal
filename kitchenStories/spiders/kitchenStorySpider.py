@@ -126,6 +126,7 @@ class KchenStory_Spider(BaseSpider):
               video = re.match('.*/recipe/l/(.*)_(\w+.jpg)', src[0])
               videosourceurl=video.group(1)
               videourl='http://m.haodou.com/recipe/'+videosourceurl.split('/',2)[2]+'/'
+              #将url隐藏http://120.25.213.154/img/video/
               ngnixurl='http://120.25.213.154/img/video/'+videosourceurl.split('/',2)[2]+'.mp4'
               item['imgurl']=src[0]
               #item['videourl']='http://v.hoto.cn/'+re.match('.*/recipe/l/(.*)_(\w+.jpg)',src[0]).group(1)+'.mp4'
